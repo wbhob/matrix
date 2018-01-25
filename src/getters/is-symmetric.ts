@@ -1,5 +1,4 @@
 import { NestedArray } from "../types";
-import { isSquare } from "./is-square";
 
 export function isSymmetric(matrix: NestedArray<number>): boolean {
     for (let i = 0; i < matrix.length; i++) {

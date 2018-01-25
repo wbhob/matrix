@@ -3,6 +3,8 @@ import { isSquare } from './getters/is-square';
 import { isSymmetric } from './getters/is-symmetric';
 import { checkMatrixValidity, transformSimpleArray } from './initial-transforms';
 import { MatrixInput, NestedArray } from './types';
+import { isScalar } from './getters/is-scalar';
+import { isIdentity } from './getters/is-identity';
 
 export class Matrix {
 
@@ -33,14 +35,14 @@ export class Matrix {
     }
 
     get isDiagonal(): boolean {
-        return this.isSquare && this.isSymmetric && isDiagonal(this._matrix);
+        return this.isSymmetric && isDiagonal(this._matrix);
     }
 
     get isScalar(): boolean {
-        return true;
+        return this.isDiagonal && isScalar(this._matrix);
     }
 
     get isIdentity(): boolean {
-        return true;
+        return this.isDiagonal && isIdentity(this._matrix);
     }
 }
