@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "inlineSourceMap": true
+    },
+    "include": [
+        "__test__/**/*.ts"
+    ]
+}

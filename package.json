@@ -1,0 +1,61 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "A package for working with matricies",
+  "main": "dist/index",
+  "directories": {
+    "test": "test",
+    "lib": "dist"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbhob/matrix.git"
+  },
+  "keywords": [
+    "matrix"
+  ],
+  "author": "Wilson Hobbs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wbhob/matrix/issues"
+  },
+  "homepage": "https://github.com/wbhob/matrix#readme",
+  "devDependencies": {
+    "@types/jest": "^22.1.0",
+    "coveralls": "^3.0.0",
+    "jest": "^22.1.4",
+    "nyc": "^11.4.1",
+    "ts-jest": "^22.0.1",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "nyc": {
+    "all": false,
+    "check-coverage": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/.ts"
+    ]
+  }
+}
