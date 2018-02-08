@@ -1,10 +1,13 @@
 import { isDiagonal } from './getters/is-diagonal';
+import { isIdentity } from './getters/is-identity';
+import { isScalar } from './getters/is-scalar';
 import { isSquare } from './getters/is-square';
 import { isSymmetric } from './getters/is-symmetric';
 import { checkMatrixValidity, transformSimpleArray } from './initial-transforms';
+import { multiply } from './methods/multiply';
+import { transpose } from './methods/transpose';
 import { MatrixInput, NestedArray } from './types';
-import { isScalar } from './getters/is-scalar';
-import { isIdentity } from './getters/is-identity';
+import { equate } from './util/equate';
 
 export class Matrix {
 
@@ -19,19 +22,34 @@ export class Matrix {
         }
     }
 
-    get dimensions() {
-        return {
-            r: this._matrix.length,
-            c: this._matrix[0].length
-        }
+
+    transpose(): Matrix {
+        return new Matrix(transpose(this._matrix));
     }
+
+    multiply(matrix: Matrix) {
+        return new Matrix(multiply(this, matrix));
+    }
+
+    get matrix(): NestedArray<number> {
+        return this._matrix;
+    }
+
+    get rows(): number {
+        return this._matrix.length
+    }
+
+    get columns(): number {
+        return this._matrix[0].length
+    }
+
 
     get isSquare(): boolean {
         return isSquare(this._matrix);
     }
 
     get isSymmetric(): boolean {
-        return this.isSquare && isSymmetric(this._matrix);
+        return equate(this._matrix, transpose(this._matrix));
     }
 
     get isDiagonal(): boolean {

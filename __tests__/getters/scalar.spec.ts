@@ -13,6 +13,8 @@ let nonScalarMatrix = new Matrix([
 ])
 
 test('scalar matrix', () => {
+    console.log(scalarMatrix.isSquare);
+
     expect(scalarMatrix.isScalar).toBe(true);
 });
 

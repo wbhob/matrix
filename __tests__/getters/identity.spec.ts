@@ -1,9 +1,9 @@
 import { Matrix } from '../../src/matrix';
 
 let identityMatrix = new Matrix([
-    [4, 0, 0],
-    [0, 4, 0],
-    [0, 0, 5]
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1]
 ])
 
 let nonIdentityMatrix = new Matrix([

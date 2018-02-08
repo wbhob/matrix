@@ -1,4 +1,4 @@
-import { Matrix } from '../../src/matrix';
+import { Matrix } from "../../src/matrix";
 
 let symmetricMatrix = new Matrix([
     [1, 2, 3],

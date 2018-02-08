@@ -37,7 +37,7 @@ test('should convert all numbers to columns', () => {
         2,
         3
     ])
-    expect(numCol.dimensions).toEqual({ r: 3, c: 1 });
+    expect(numCol.columns).toEqual(1);
 });
 
 // test('c represents columns', () => {

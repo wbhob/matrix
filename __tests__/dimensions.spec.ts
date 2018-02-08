@@ -10,9 +10,9 @@ let matrix = new Matrix(
 )
 
 test('r represents rows', () => {
-    expect(matrix.dimensions.r).toBe(4);
+    expect(matrix.rows).toBe(4);
 });
 
 test('c represents columns', () => {
-    expect(matrix.dimensions.c).toBe(3);
+    expect(matrix.columns).toBe(3);
 })
