@@ -17,7 +17,7 @@ let incompatibleMatrix = new Matrix([
 ])
 
 
-test('transpose a matrix', () => {
+test('should multiply two matrices', () => {
     expect(matrix1.multiply(matrix2)).toEqual(
         new Matrix([
             [1, 10],
@@ -26,6 +26,6 @@ test('transpose a matrix', () => {
     );
 });
 
-test('throw if trying to transpose a non-square matrix', () => {
+test('throw if trying to multiply mismatched matrices', () => {
     expect(() => matrix1.multiply(incompatibleMatrix)).toThrow('Attempted to multiply matrices with non-matching dimensions. Matrix 1 has 2 columns, but Matrix 2 has 3 rows.');
 })

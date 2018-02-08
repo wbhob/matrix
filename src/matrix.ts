@@ -5,6 +5,7 @@ import { isSquare } from './getters/is-square';
 import { isSymmetric } from './getters/is-symmetric';
 import { checkMatrixValidity, transformSimpleArray } from './initial-transforms';
 import { multiply } from './methods/multiply';
+import { power } from './methods/power';
 import { transpose } from './methods/transpose';
 import { MatrixInput, NestedArray } from './types';
 import { equate } from './util/equate';
@@ -27,8 +28,12 @@ export class Matrix {
         return new Matrix(transpose(this._matrix));
     }
 
-    multiply(matrix: Matrix) {
+    multiply(matrix: Matrix): Matrix {
         return new Matrix(multiply(this, matrix));
+    }
+
+    power(pow: number): Matrix {
+        return power(this, pow);
     }
 
     get matrix(): NestedArray<number> {
