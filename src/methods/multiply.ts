@@ -1,8 +1,8 @@
-import { Matrix } from "../matrix";
-import { NestedArray } from "../types";
+import { Matrix } from '../matrix';
+import { NestedArray } from '../types';
 
-export function multiply(matrix1: Matrix, matrix2: Matrix) {
-    let newMatrix: NestedArray<number> = [[]];
+export const multiply = (matrix1: Matrix, matrix2: Matrix) => {
+    const newMatrix: NestedArray<number> = [[]];
     if (matrix1.columns == matrix2.rows) {
         for (let i = 0; i < matrix1.rows; i++) {
             newMatrix[i] = [];
@@ -15,8 +15,10 @@ export function multiply(matrix1: Matrix, matrix2: Matrix) {
             }
         }
     } else {
-        throw new Error("Attempted to multiply matrices with non-matching dimensions. Matrix 1 has " + matrix1.columns +
-            " columns, but Matrix 2 has " + matrix2.rows + " rows.")
+        throw new Error('Attempted to multiply matrices with non-matching dimensions. Matrix 1 has '
+            + matrix1.columns + ' columns, but Matrix 2 has ' + matrix2.rows + ' rows.');
     }
+
     return newMatrix;
-}
+};
+

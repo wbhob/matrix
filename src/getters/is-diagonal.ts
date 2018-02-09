@@ -1,6 +1,6 @@
-import { NestedArray } from "../types";
+import { NestedArray } from '../types';
 
-export function isDiagonal(matrix: NestedArray<number>): boolean {
+export const isDiagonal = (matrix: NestedArray<number>): boolean => {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
             if (i != j && matrix[i][j] != 0) {
@@ -8,5 +8,6 @@ export function isDiagonal(matrix: NestedArray<number>): boolean {
             }
         }
     }
+
     return true;
-}
+};

@@ -4,11 +4,15 @@
         "target": "es2015",
         "sourceMap": true,
         "noImplicitAny": true,
+        "strict": true,
+        "outDir": "./dist",
+        "sourceRoot": "src",
+        "declaration": true,
         "typeRoots": [
             "node_modules/@types"
         ]
     },
-    "files": [
+    "include": [
         "src/**/*.ts"
     ]
 }

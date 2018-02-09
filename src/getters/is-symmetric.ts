@@ -1,6 +1,6 @@
-import { NestedArray } from "../types";
+import { NestedArray } from '../types';
 
-export function isSymmetric(matrix: NestedArray<number>): boolean {
+export const isSymmetric = (matrix: NestedArray<number>): boolean => {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
             if (matrix[i][j] != matrix[j][i]) {
@@ -8,5 +8,6 @@ export function isSymmetric(matrix: NestedArray<number>): boolean {
             }
         }
     }
+
     return true;
-}
+};

@@ -1,5 +1,5 @@
-import { NestedArray } from "../types";
+import { NestedArray } from '../types';
 
-export function isSquare(matrix: NestedArray<number>) {
-    return matrix.length == matrix[0].length
-}
+export const isSquare = (matrix: NestedArray<number>) => {
+    return matrix.length == matrix[0].length;
+};

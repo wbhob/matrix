@@ -1,18 +1,18 @@
-import { MatrixInput } from './types';
-import { NestedArray } from './types';
+import { MatrixInput, NestedArray } from './types';
 
-export function checkMatrixValidity(matrix: NestedArray<number>): boolean {
-    let rowLength = matrix[0].length;
+export const checkMatrixValidity = (matrix: NestedArray<number>): boolean => {
+    const rowLength = matrix[0].length;
     matrix.forEach((row, index) => {
         if (row.length != rowLength) {
             throw new Error('Row ' + (index + 1) + ' has a mismatched length within the matrix. Expected: ' + rowLength + '. Got: ' + row.length);
         }
     });
-    return true;
-}
 
-export function transformSimpleArray(matrix: MatrixInput): NestedArray<number> {
-    let isComplexMatrix: boolean = Array.isArray(matrix[0]);
+    return true;
+};
+
+export const transformSimpleArray = (matrix: MatrixInput): NestedArray<number> => {
+    const isComplexMatrix: boolean = Array.isArray(matrix[0]);
 
     matrix.forEach((row, index) => {
         if (Array.isArray(row) != isComplexMatrix) {
@@ -21,9 +21,15 @@ export function transformSimpleArray(matrix: MatrixInput): NestedArray<number> {
         }
     });
 
+    let array: NestedArray<number>;
+
     if (!isComplexMatrix) {
-        matrix = matrix.map((i: number) => [i]);
+        array = (matrix as number[]).map((i: number) => [i]);
+    } else {
+        array = matrix as NestedArray<number>;
     }
 
-    return matrix as NestedArray<number>;
-}
+    return array;
+
+};
+

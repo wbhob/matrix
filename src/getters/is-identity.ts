@@ -1,10 +1,11 @@
-import { NestedArray } from "../types";
+import { NestedArray } from '../types';
 
-export function isIdentity(matrix: NestedArray<number>): boolean {
+export const isIdentity = (matrix: NestedArray<number>): boolean => {
     for (let i = 0; i < matrix.length; i++) {
         if (matrix[i][i] != 1) {
             return false;
         }
     }
+
     return true;
-}
+};

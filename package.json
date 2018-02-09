@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "jest",
-    "coverage": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coverage": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

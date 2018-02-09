@@ -1,11 +1,11 @@
 import { Matrix } from '../../src/matrix';
 
-let matrix1 = new Matrix([
+const matrix1 = new Matrix([
     [1, 2],
     [0, 4]
 ]);
 
-let incompatibleMatrix = new Matrix([
+const incompatibleMatrix = new Matrix([
     [1, 0],
     [0, 5],
     [3, 9],

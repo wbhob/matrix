@@ -1,8 +1,9 @@
-import { Matrix } from "../matrix";
+import { Matrix } from '../matrix';
+import { NestedArray } from '../types';
 
-export class IdentityMatrix extends Matrix {
+export class ZeroMatrix extends Matrix {
     constructor(rows: number, columns: number) {
-        let matrix = [];
+        const matrix: NestedArray<number> = [];
         for (let i = 1; i <= rows; i++) {
             matrix[i - 1] = [];
             for (let j = 1; j <= columns; j++) {

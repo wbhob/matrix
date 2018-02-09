@@ -14,12 +14,12 @@ export class Matrix {
 
     private _matrix: NestedArray<number>;
 
-    constructor(
-        matrix: MatrixInput
-    ) {
-        let transformed = transformSimpleArray(matrix);
+    constructor(matrix: MatrixInput) {
+        const transformed = transformSimpleArray(matrix);
         if (checkMatrixValidity(transformed)) {
             this._matrix = transformed;
+        } else {
+            this._matrix = [[]];
         }
     }
 
@@ -41,11 +41,11 @@ export class Matrix {
     }
 
     get rows(): number {
-        return this._matrix.length
+        return this._matrix.length;
     }
 
     get columns(): number {
-        return this._matrix[0].length
+        return this._matrix[0].length;
     }
 
 
